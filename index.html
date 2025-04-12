@@ -506,6 +506,7 @@
         .team-section {
             padding: 60px 20px;
             background: linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.85) 100%);
+            text-align: center;
         }
 
         .team-grid {
@@ -524,6 +525,7 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px;
         }
 
         .team-member:hover {
@@ -531,26 +533,8 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
-        .member-image {
-            width: 100%;
-            height: 300px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .member-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .team-member:hover .member-image img {
-            transform: scale(1.05);
-        }
-
         .member-info {
-            padding: 30px;
+            text-align: left;
         }
 
         .member-info h3 {
@@ -598,11 +582,7 @@
                 gap: 30px;
             }
 
-            .member-image {
-                height: 250px;
-            }
-
-            .member-info {
+            .team-member {
                 padding: 20px;
             }
         }
@@ -641,12 +621,9 @@
 
     <!-- Team Section -->
     <section class="pitch-section team-section">
-        <h2>Our Team</h2>
+        <h2 class="section-title">Our Team</h2>
         <div class="team-grid">
             <div class="team-member">
-                <div class="member-image">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Mario Onoh">
-                </div>
                 <div class="member-info">
                     <h3>Mario Onoh</h3>
                     <span class="role">Co-Founder & CEO</span>
@@ -655,9 +632,6 @@
             </div>
 
             <div class="team-member">
-                <div class="member-image">
-                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Johnny Rapp">
-                </div>
                 <div class="member-info">
                     <h3>Johnny Rapp</h3>
                     <span class="role">Co-Founder & CTO</span>
@@ -666,49 +640,10 @@
             </div>
 
             <div class="team-member">
-                <div class="member-image">
-                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Paul D. Schindler">
-                </div>
                 <div class="member-info">
                     <h3>Paul D. Schindler</h3>
                     <span class="role">Board Advisor</span>
                     <p>Paul is the Senior Chair of the New York Entertainment and Media Practice and co-founder of one of the most influential entertainment law firms in the world. He's played a key role in major industry deals, including the Woodstock Festival Agreement, the sale of MVO Agency to ICM, and the sale of Fantasma Promotions to Live Nation. Paul offers unmatched legal and strategic insight as a guiding force on our advisory board.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Platform Overview</h2>
-            <div class="platform-showcase">
-                <div class="showcase-content">
-                    <h2>For Artists</h2>
-                    <p>Our artist dashboard provides a comprehensive view of tour performance, revenue tracking, and opportunity management. Artists can:</p>
-                    <ul>
-                        <li>Track real-time revenue and expenses</li>
-                        <li>Manage tour schedules and logistics</li>
-                        <li>Receive AI-powered venue recommendations</li>
-                        <li>Access detailed analytics and insights</li>
-                    </ul>
-                </div>
-                <div class="showcase-image">
-                    <img src="artist-dashboard-preview.png" alt="Artist Dashboard Preview">
-                </div>
-            </div>
-            <div class="platform-showcase">
-                <div class="showcase-image">
-                    <img src="agent-dashboard-preview.png" alt="Agent Dashboard Preview">
-                </div>
-                <div class="showcase-content">
-                    <h2>For Agents</h2>
-                    <p>Our agent dashboard streamlines artist management and venue negotiations. Agents can:</p>
-                    <ul>
-                        <li>Manage multiple artists efficiently</li>
-                        <li>Track negotiations and offers</li>
-                        <li>Access venue compatibility matching</li>
-                        <li>Monitor payment processing and revenue</li>
-                    </ul>
                 </div>
             </div>
         </div>
