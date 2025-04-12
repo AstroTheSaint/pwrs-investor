@@ -52,19 +52,32 @@ document.querySelectorAll('.section').forEach(section => {
     observer.observe(section);
 });
 
-// Add fade-in class when element is visible
+// Initialize sections that are already visible
 document.addEventListener('DOMContentLoaded', () => {
+    // Show sections that are already in viewport
     document.querySelectorAll('.section').forEach(section => {
-        if (section.getBoundingClientRect().top < window.innerHeight) {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.8) {
             section.classList.add('fade-in');
         }
     });
+
+    // Add hover effects to cards
+    document.querySelectorAll('.feature-card, .metric-card, .team-card').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-5px)';
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0)';
+        });
+    });
 });
 
-// Add fade-in class to elements when they become visible
-document.addEventListener('scroll', () => {
+// Add scroll-based animations
+window.addEventListener('scroll', () => {
     document.querySelectorAll('.section:not(.fade-in)').forEach(section => {
-        if (section.getBoundingClientRect().top < window.innerHeight * 0.8) {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.8) {
             section.classList.add('fade-in');
         }
     });
