@@ -44,6 +44,7 @@ body {
     backdrop-filter: blur(5px);
     z-index: 1000;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
 }
 
 .navbar .container {
@@ -445,6 +446,11 @@ body {
 
 .nav-button:hover {
     background: var(--secondary-color);
+}
+
+.nav-button:disabled {
+    background: var(--light-text);
+    cursor: not-allowed;
 }
 
 /* Contact Section */

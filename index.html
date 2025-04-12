@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PWRS - Revolutionizing Live Music</title>
+    <title>PWRS - Investor Pitch</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
@@ -17,18 +17,17 @@
                 <a href="#platform">Platform</a>
                 <a href="#metrics">Metrics</a>
                 <a href="#team">Team</a>
-                <a href="#contact" class="cta-button">Contact Us</a>
+                <a href="#contact">Contact</a>
             </div>
         </div>
     </nav>
 
-    <header class="hero">
+    <section class="hero">
         <div class="container">
-            <h1>Revolutionizing the Live Music Industry</h1>
-            <p class="hero-subtitle">AI-Powered Tour Management Platform</p>
-            <a href="#contact" class="cta-button">Join the Future</a>
+            <h1>PWRS</h1>
+            <p class="hero-subtitle">Revolutionizing the Live Music Industry with AI-Powered Tour Management</p>
         </div>
-    </header>
+    </section>
 
     <section id="opportunity" class="section">
         <div class="container">
@@ -45,7 +44,7 @@
                     <p>Post-pandemic surge in live events, combined with increasing demand for data-driven tour management solutions.</p>
                 </div>
                 <div class="feature-card">
-                    <i class="ri-team-line"></i>
+                    <i class="ri-focus-3-line"></i>
                     <h3>Target Market</h3>
                     <p>Focusing on mid-tier artists ($50k-$500k per show) who lack sophisticated tour management tools.</p>
                 </div>
@@ -59,6 +58,7 @@
             <div class="platform-showcase">
                 <div class="showcase-content">
                     <h3>For Artists</h3>
+                    <p>Our artist dashboard provides a comprehensive view of tour performance, revenue tracking, and opportunity management. Artists can:</p>
                     <ul>
                         <li>Track real-time revenue and expenses</li>
                         <li>Manage tour schedules and logistics</li>
@@ -68,6 +68,7 @@
                 </div>
                 <div class="showcase-content">
                     <h3>For Agents</h3>
+                    <p>Our agent dashboard streamlines artist management and venue negotiations. Agents can:</p>
                     <ul>
                         <li>Manage multiple artists efficiently</li>
                         <li>Track negotiations and offers</li>
@@ -109,51 +110,56 @@
             <div class="team-grid">
                 <div class="team-card">
                     <div class="team-image">
-                        <img src="assets/mario.jpg" alt="Mario Onoh">
+                        <img src="assets/mario.jpg" alt="Mario">
                     </div>
-                    <h3>Mario Onoh</h3>
-                    <h4>Co-Founder & CEO</h4>
-                    <p>Originally from Dallas, Mario Onoh is a Boston University graduate with a focus in finance and a deep-rooted career in the music industry. Over the past decade, he's managed tours, artists, and label operations for names like Future and Metro Boomin. As a self-taught coder with over 15 years of experience, Mario bridges culture and technology with rare fluency.</p>
+                    <h3>Mario</h3>
+                    <h4>Founder & CEO</h4>
+                    <p>Former tour manager with 15+ years of experience in the live music industry.</p>
                 </div>
                 <div class="team-card">
                     <div class="team-image">
-                        <img src="assets/johnny.jpg" alt="Johnny Rapp">
+                        <img src="assets/johnny.jpg" alt="Johnny">
                     </div>
-                    <h3>Johnny Rapp</h3>
-                    <h4>Co-Founder & CTO</h4>
-                    <p>Johnny is a digital strategist turned conscious technologist. After building a network of viral meme pages reaching millions, he transformed his experience into a framework for helping creators navigate the digital world with clarity and purpose. Johnny leads product and platform development, using his expertise in social media, systems design, and behavioral tech.</p>
+                    <h3>Johnny</h3>
+                    <h4>CTO</h4>
+                    <p>Tech entrepreneur with expertise in AI and machine learning applications.</p>
                 </div>
                 <div class="team-card">
                     <div class="team-image">
-                        <img src="assets/paul.jpg" alt="Paul D. Schindler">
+                        <img src="assets/paul.jpg" alt="Paul">
                     </div>
-                    <h3>Paul D. Schindler</h3>
-                    <h4>Board Advisor</h4>
-                    <p>Paul is the Senior Chair of the New York Entertainment and Media Practice and co-founder of one of the most influential entertainment law firms in the world. He's played a key role in major industry deals, including the Woodstock Festival Agreement, the sale of MVO Agency to ICM, and the sale of Fantasma Promotions to Live Nation.</p>
+                    <h3>Paul</h3>
+                    <h4>Head of Operations</h4>
+                    <p>Operations specialist with a background in logistics and event management.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="presentation-section">
+    <section id="presentation" class="section presentation-section">
         <div class="container">
             <div class="presentation-card">
                 <i class="ri-presentation-line presentation-icon"></i>
                 <h2 class="presentation-title">Detailed Investor Presentation</h2>
                 <p class="presentation-description">Access our comprehensive investor presentation to learn more about our vision, technology, and growth strategy.</p>
-                <button class="presentation-button" onclick="openPresentation()">
-                    <i class="ri-eye-line"></i>
-                    View Presentation
-                </button>
+                <button id="view-presentation" class="cta-button">View Presentation</button>
             </div>
         </div>
     </section>
 
-    <div class="presentation-modal" id="presentationModal">
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Join Us in Transforming Live Music</h2>
+            <p class="contact-text">We're seeking strategic investors to help us scale our platform and revolutionize the live music industry.</p>
+            <a href="mailto:contact@pwrs.com" class="cta-button">Contact Us</a>
+        </div>
+    </section>
+
+    <div id="presentation-modal" class="presentation-modal">
         <div class="modal-content">
-            <span class="close-modal" onclick="closePresentation()">&times;</span>
+            <span class="close-modal">&times;</span>
             <div class="presentation-slides">
-                <div class="slide active">
+                <div class="slide active" id="slide1">
                     <h3 class="slide-title">Executive Summary</h3>
                     <div class="slide-content">
                         <p>PWRS is revolutionizing the live music industry by providing AI-powered tour management solutions for artists and agents.</p>
@@ -163,12 +169,12 @@
                             <li>Backed by industry veterans and technology experts</li>
                         </ul>
                         <div class="future-vision">
-                            <h4><i class="ri-rocket-line"></i> Our Vision</h4>
+                            <h4><i class="ri-eye-line"></i> Our Vision</h4>
                             <p>We envision a future where artists can focus entirely on their craft while our technology handles the complexities of tour management, creating unprecedented opportunities for creative expression and financial success.</p>
                         </div>
                     </div>
                 </div>
-                <div class="slide">
+                <div class="slide" id="slide2">
                     <h3 class="slide-title">Market Opportunity</h3>
                     <div class="slide-content">
                         <p>The live music industry is experiencing unprecedented growth post-pandemic:</p>
@@ -194,7 +200,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="slide">
+                <div class="slide" id="slide3">
                     <h3 class="slide-title">Technology & Innovation</h3>
                     <div class="slide-content">
                         <p>Our platform leverages cutting-edge technology:</p>
@@ -205,7 +211,7 @@
                             <li>Integrated payment processing</li>
                         </ul>
                         <div class="future-vision">
-                            <h4><i class="ri-cpu-line"></i> Future Technology Roadmap</h4>
+                            <h4><i class="ri-rocket-line"></i> Future Technology Roadmap</h4>
                             <ul>
                                 <li>Blockchain-based smart contracts for automated payments and royalty distribution</li>
                                 <li>Augmented reality tour planning and visualization</li>
@@ -215,36 +221,28 @@
                         </div>
                     </div>
                 </div>
-                <div class="slide">
+                <div class="slide" id="slide4">
                     <h3 class="slide-title">The Future of Live Performance</h3>
                     <div class="slide-content">
                         <p>We're shaping the future of how artists connect with audiences:</p>
-                        <div class="highlight-box">
-                            <p>The traditional touring model is evolving. PWRS is at the forefront of this transformation, creating new opportunities for artists to reach global audiences while maximizing revenue and creative freedom.</p>
-                        </div>
+                        <p>The traditional touring model is evolving. PWRS is at the forefront of this transformation, creating new opportunities for artists to reach global audiences while maximizing revenue and creative freedom.</p>
                         <div class="timeline">
                             <div class="timeline-item">
                                 <div class="timeline-date">2024</div>
-                                <div class="timeline-content">
-                                    <p>Launch of hybrid tour models combining physical and virtual experiences</p>
-                                </div>
+                                <div class="timeline-content">Launch of hybrid tour models combining physical and virtual experiences</div>
                             </div>
                             <div class="timeline-item">
                                 <div class="timeline-date">2025</div>
-                                <div class="timeline-content">
-                                    <p>Integration of immersive technologies for enhanced fan experiences</p>
-                                </div>
+                                <div class="timeline-content">Integration of immersive technologies for enhanced fan experiences</div>
                             </div>
                             <div class="timeline-item">
                                 <div class="timeline-date">2026</div>
-                                <div class="timeline-content">
-                                    <p>Global expansion with localized tour optimization for international markets</p>
-                                </div>
+                                <div class="timeline-content">Global expansion with localized tour optimization for international markets</div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="slide">
+                <div class="slide" id="slide5">
                     <h3 class="slide-title">Growth Strategy</h3>
                     <div class="slide-content">
                         <p>Our roadmap for expansion includes:</p>
@@ -255,7 +253,7 @@
                             <li>Integration with existing industry tools</li>
                         </ul>
                         <div class="future-vision">
-                            <h4><i class="ri-global-line"></i> Market Penetration Strategy</h4>
+                            <h4><i class="ri-map-pin-line"></i> Market Penetration Strategy</h4>
                             <ul>
                                 <li>Phase 1: Establish presence in major US markets (2024)</li>
                                 <li>Phase 2: Expand to European and Asian markets (2025)</li>
@@ -264,7 +262,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="slide">
+                <div class="slide" id="slide6">
                     <h3 class="slide-title">Investment Opportunity</h3>
                     <div class="slide-content">
                         <p>We're seeking strategic investors to:</p>
@@ -274,8 +272,8 @@
                             <li>Build strategic partnerships</li>
                             <li>Scale operations</li>
                         </ul>
-                        <div class="future-vision">
-                            <h4><i class="ri-line-chart-line"></i> Projected Returns</h4>
+                        <div class="highlight-box">
+                            <h4>Projected Returns</h4>
                             <p>Our financial projections show:</p>
                             <ul>
                                 <li>300% revenue growth in the first 24 months</li>
@@ -283,30 +281,16 @@
                                 <li>5x return on investment within 3 years</li>
                             </ul>
                         </div>
-                        <div class="highlight-box">
-                            <p>Join us in transforming the future of live music and creating unprecedented opportunities for artists worldwide.</p>
-                        </div>
+                        <p>Join us in transforming the future of live music and creating unprecedented opportunities for artists worldwide.</p>
                     </div>
                 </div>
             </div>
             <div class="slide-navigation">
-                <button class="nav-button" onclick="previousSlide()" id="prevButton">
-                    <i class="ri-arrow-left-line"></i> Previous
-                </button>
-                <button class="nav-button" onclick="nextSlide()" id="nextButton">
-                    Next <i class="ri-arrow-right-line"></i>
-                </button>
+                <button id="prev-slide" class="nav-button"><i class="ri-arrow-left-line"></i> Previous</button>
+                <button id="next-slide" class="nav-button">Next <i class="ri-arrow-right-line"></i></button>
             </div>
         </div>
     </div>
-
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title">Join Us in Transforming Live Music</h2>
-            <p class="contact-text">We're seeking strategic investors to help us scale our platform and revolutionize the live music industry.</p>
-            <a href="mailto:contact@pwrs.com" class="cta-button">Contact Us</a>
-        </div>
-    </section>
 
     <footer class="footer">
         <div class="container">
@@ -317,19 +301,21 @@
                     <a href="#platform">Platform</a>
                     <a href="#metrics">Metrics</a>
                     <a href="#team">Team</a>
+                    <a href="#contact">Contact</a>
                 </div>
                 <div class="footer-social">
-                    <a href="#"><i class="ri-linkedin-fill"></i></a>
                     <a href="#"><i class="ri-twitter-fill"></i></a>
+                    <a href="#"><i class="ri-linkedin-fill"></i></a>
                     <a href="#"><i class="ri-instagram-fill"></i></a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 PWRS. All rights reserved.</p>
+                <p>&copy; 2023 PWRS. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
+</html> 
 </html> 
