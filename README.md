@@ -1,69 +1,48 @@
-# PWRS Investor Website
+# PWRS - Investor Pitch Website
 
-A modern, professional website for PWRS investors showcasing the company's vision, platform, and team.
+A modern, responsive website for PWRS, an AI-powered tour management platform revolutionizing the live music industry.
 
 ## Features
 
-- Modern, responsive design
-- Smooth scrolling navigation
-- Interactive animations
-- Team showcase section
-- Mobile-friendly layout
-- Performance optimized
+- Responsive design that works on all devices
+- Interactive presentation modal with slides
+- Team section with member profiles
+- Metrics and platform showcase
+- Contact section for investor inquiries
 
-## Setup
+## Technologies Used
 
-1. Clone the repository
-2. Add team member images to the `assets` directory:
-   - `mario.jpg`
-   - `johnny.jpg`
-   - `paul.jpg`
-3. Open `index.html` in a web browser
+- HTML5
+- CSS3
+- JavaScript
+- Remix Icon for icons
+- Google Fonts (Inter)
 
-## Customization
+## Getting Started
 
-### Colors
-The color scheme can be modified in the `styles.css` file under the `:root` section:
+1. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/pwrs-investor-pitch.git
+   ```
 
-```css
-:root {
-    --primary-color: #FFB900;
-    --secondary-color: #1E1E1E;
-    --background-color: #121212;
-    --text-color: #FFFFFF;
-    --text-secondary: rgba(255, 255, 255, 0.7);
-}
-```
+2. Open the project folder:
+   ```
+   cd pwrs-investor-pitch
+   ```
 
-### Content
-- Update team member information in `index.html`
-- Modify metrics and statistics in the metrics section
-- Update contact information and social media links
+3. Open `index.html` in your browser to view the website.
 
-### Images
-- Team member images should be placed in the `assets` directory
-- Recommended image size: 600x800 pixels
-- Format: JPG or PNG
-- Optimize images for web use
+## Project Structure
 
-## Browser Support
+- `index.html` - Main HTML file
+- `styles.css` - CSS styles
+- `script.js` - JavaScript functionality
+- `assets/` - Images and other assets
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
+## License
 
-## Performance
-
-The website is optimized for performance with:
-- Lazy loading images
-- Smooth scrolling
-- Intersection Observer for animations
-- Minimal JavaScript
-- CSS animations instead of JavaScript where possible
+This project is proprietary and confidential. All rights reserved.
 
 ## Contact
 
-For any questions or support, please contact:
-- Email: contact@pwrs.com
-- Website: https://pwrs.com 
+For inquiries, please contact: contact@pwrs.com 

@@ -1,8 +1,33 @@
-# Dependencies
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
 node_modules/
-npm-debug.log
-yarn-debug.log
-yarn-error.log
+jspm_packages/
+
+# Distribution directories
+dist/
+build/
 
 # Environment variables
 .env
@@ -12,14 +37,5 @@ yarn-error.log
 .env.production.local
 
 # Build output
-dist/
-build/
 .next/
-out/
-
-# IDE and editor files
-.idea/
-.vscode/
-*.swp
-*.swo
-.DS_Store 
+out/ 
