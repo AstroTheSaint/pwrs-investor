@@ -1,1 +1,953 @@
- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PWRS - Investor Opportunity</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #FFB900;
+            --background-color: #121212;
+            --card-background: #1E1E1E;
+            --text-color: #FFFFFF;
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(45deg, #121212, #1E1E1E);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,185,0,0.1) 0%, rgba(18,18,18,0) 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 40px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #FFB900, #FFD700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-align: center;
+            color: var(--primary-color);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background: var(--card-background);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            opacity: 0.8;
+        }
+
+        .platform-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .showcase-content {
+            padding: 40px;
+        }
+
+        .showcase-content h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .showcase-content p {
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .showcase-image {
+            background: var(--card-background);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .showcase-image img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .metric-card {
+            text-align: center;
+            padding: 30px;
+            background: var(--card-background);
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .metric-value {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .metric-label {
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 80px 0;
+            background: linear-gradient(45deg, #1E1E1E, #2A2A2A);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--primary-color);
+            color: #000;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            margin-top: 30px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 185, 0, 0.3);
+        }
+
+        /* Presentation Modal Styles */
+        .presentation-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            background: var(--card-background);
+            margin: 40px auto;
+            padding: 30px;
+            max-width: 1000px;
+            border-radius: var(--border-radius);
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .close-modal:hover {
+            color: var(--primary-color);
+        }
+
+        .presentation-section {
+            text-align: center;
+            padding: 60px 0;
+            background: linear-gradient(45deg, #1A1A1A, #2A2A2A);
+        }
+
+        .presentation-card {
+            background: var(--card-background);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+
+        .presentation-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .presentation-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .presentation-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .presentation-description {
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .presentation-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            background: var(--primary-color);
+            color: #000;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .presentation-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 185, 0, 0.3);
+        }
+
+        .presentation-slides {
+            display: none;
+            margin-top: 30px;
+        }
+
+        .slide {
+            display: none;
+            text-align: left;
+            padding: 20px;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        .slide-title {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .slide-content {
+            margin-bottom: 30px;
+        }
+
+        .slide-content p {
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .slide-content ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .slide-content li {
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
+        .future-vision {
+            background: linear-gradient(135deg, rgba(255, 185, 0, 0.1), rgba(29, 185, 84, 0.1));
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin: 20px 0;
+            border: 1px solid rgba(255, 185, 0, 0.2);
+        }
+
+        .future-vision h4 {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .future-vision h4 i {
+            font-size: 1.4rem;
+        }
+
+        .future-vision p {
+            margin-bottom: 10px;
+        }
+
+        .future-vision ul {
+            margin-left: 25px;
+        }
+
+        .future-vision li {
+            margin-bottom: 8px;
+            position: relative;
+        }
+
+        .future-vision li::before {
+            content: '→';
+            position: absolute;
+            left: -20px;
+            color: var(--primary-color);
+        }
+
+        .highlight-box {
+            background: rgba(255, 185, 0, 0.15);
+            border-left: 3px solid var(--primary-color);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            font-weight: 500;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .timeline {
+            position: relative;
+            margin: 30px 0;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: var(--primary-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -34px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--primary-color);
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .timeline-content {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius);
+            padding: 15px;
+        }
+
+        .timeline-content p {
+            margin: 0;
+        }
+
+        .slide-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-button {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .nav-button:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .team-section {
+            padding: 60px 20px;
+            background: linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.85) 100%);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .team-member {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .member-image {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover .member-image img {
+            transform: scale(1.05);
+        }
+
+        .member-info {
+            padding: 30px;
+        }
+
+        .member-info h3 {
+            font-size: 24px;
+            margin: 0 0 10px 0;
+            color: #fff;
+        }
+
+        .role {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .member-info p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .platform-showcase {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 40px 0;
+            }
+
+            .modal-content {
+                margin: 20px;
+                padding: 20px;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .member-image {
+                height: 250px;
+            }
+
+            .member-info {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>PWRS</h1>
+            <p>Revolutionizing the Live Music Industry with AI-Powered Tour Management</p>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">The Opportunity</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="ri-line-chart-line feature-icon"></i>
+                    <h3>Market Size</h3>
+                    <p>The global live music industry is projected to reach $31.5 billion by 2026, with a CAGR of 3.5% from 2021 to 2026.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="ri-rocket-line feature-icon"></i>
+                    <h3>Growth Potential</h3>
+                    <p>Post-pandemic surge in live events, combined with increasing demand for data-driven tour management solutions.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="ri-team-line feature-icon"></i>
+                    <h3>Target Market</h3>
+                    <p>Focusing on mid-tier artists ($50k-$500k per show) who lack sophisticated tour management tools.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="pitch-section team-section">
+        <h2>Our Team</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="member-image">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Mario Onoh">
+                </div>
+                <div class="member-info">
+                    <h3>Mario Onoh</h3>
+                    <span class="role">Co-Founder & CEO</span>
+                    <p>Originally from Dallas, Mario Onoh is a Boston University graduate with a focus in finance and a deep-rooted career in the music industry. Over the past decade, he's managed tours, artists, and label operations for names like Future and Metro Boomin. As a self-taught coder with over 15 years of experience, Mario bridges culture and technology with rare fluency. He leads the company's vision with a strong pulse on artist needs, operational strategy, and deep industry connections.</p>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <div class="member-image">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Johnny Rapp">
+                </div>
+                <div class="member-info">
+                    <h3>Johnny Rapp</h3>
+                    <span class="role">Co-Founder & CTO</span>
+                    <p>Johnny is a digital strategist turned conscious technologist. After building a network of viral meme pages reaching millions, he transformed his experience into a framework for helping creators navigate the digital world with clarity and purpose. Johnny leads product and platform development, using his expertise in social media, systems design, and behavioral tech to create tools that empower creators and elevate culture.</p>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <div class="member-image">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Paul D. Schindler">
+                </div>
+                <div class="member-info">
+                    <h3>Paul D. Schindler</h3>
+                    <span class="role">Board Advisor</span>
+                    <p>Paul is the Senior Chair of the New York Entertainment and Media Practice and co-founder of one of the most influential entertainment law firms in the world. He's played a key role in major industry deals, including the Woodstock Festival Agreement, the sale of MVO Agency to ICM, and the sale of Fantasma Promotions to Live Nation. Paul offers unmatched legal and strategic insight as a guiding force on our advisory board.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Platform Overview</h2>
+            <div class="platform-showcase">
+                <div class="showcase-content">
+                    <h2>For Artists</h2>
+                    <p>Our artist dashboard provides a comprehensive view of tour performance, revenue tracking, and opportunity management. Artists can:</p>
+                    <ul>
+                        <li>Track real-time revenue and expenses</li>
+                        <li>Manage tour schedules and logistics</li>
+                        <li>Receive AI-powered venue recommendations</li>
+                        <li>Access detailed analytics and insights</li>
+                    </ul>
+                </div>
+                <div class="showcase-image">
+                    <img src="artist-dashboard-preview.png" alt="Artist Dashboard Preview">
+                </div>
+            </div>
+            <div class="platform-showcase">
+                <div class="showcase-image">
+                    <img src="agent-dashboard-preview.png" alt="Agent Dashboard Preview">
+                </div>
+                <div class="showcase-content">
+                    <h2>For Agents</h2>
+                    <p>Our agent dashboard streamlines artist management and venue negotiations. Agents can:</p>
+                    <ul>
+                        <li>Manage multiple artists efficiently</li>
+                        <li>Track negotiations and offers</li>
+                        <li>Access venue compatibility matching</li>
+                        <li>Monitor payment processing and revenue</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Key Metrics</h2>
+            <div class="metrics">
+                <div class="metric-card">
+                    <div class="metric-value">$2M+</div>
+                    <div class="metric-label">Revenue Processed</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">50+</div>
+                    <div class="metric-label">Active Artists</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">200+</div>
+                    <div class="metric-label">Venue Partners</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">95%</div>
+                    <div class="metric-label">Client Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="section-title">Join Us in Transforming Live Music</h2>
+            <p>We're seeking strategic investors to help us scale our platform and revolutionize the live music industry.</p>
+            <a href="mailto:contact@pwrs.com" class="cta-button">Contact Us</a>
+        </div>
+    </section>
+
+    <section class="presentation-section">
+        <div class="container">
+            <div class="presentation-card">
+                <i class="ri-presentation-line presentation-icon"></i>
+                <h2 class="presentation-title">Detailed Investor Presentation</h2>
+                <p class="presentation-description">Access our comprehensive investor presentation to learn more about our vision, technology, and growth strategy.</p>
+                <button class="presentation-button" onclick="openPresentation()">
+                    <i class="ri-eye-line"></i>
+                    View Presentation
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <div class="presentation-modal" id="presentationModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closePresentation()">&times;</span>
+            <div class="presentation-slides">
+                <div class="slide active">
+                    <h3 class="slide-title">Executive Summary</h3>
+                    <div class="slide-content">
+                        <p>PWRS is revolutionizing the live music industry by providing AI-powered tour management solutions for artists and agents.</p>
+                        <ul>
+                            <li>Founded in 2023, PWRS has quickly established itself as a leader in tour management technology</li>
+                            <li>Our platform serves both artists and agents, streamlining the entire tour management process</li>
+                            <li>Backed by industry veterans and technology experts</li>
+                        </ul>
+                        <div class="future-vision">
+                            <h4><i class="ri-rocket-line"></i> Our Vision</h4>
+                            <p>We envision a future where artists can focus entirely on their craft while our technology handles the complexities of tour management, creating unprecedented opportunities for creative expression and financial success.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <h3 class="slide-title">Market Opportunity</h3>
+                    <div class="slide-content">
+                        <p>The live music industry is experiencing unprecedented growth post-pandemic:</p>
+                        <ul>
+                            <li>Global market size: $31.5B by 2026</li>
+                            <li>CAGR: 3.5% (2021-2026)</li>
+                            <li>Target market: Mid-tier artists ($50k-$500k per show)</li>
+                            <li>Current market gap: Lack of sophisticated tour management tools</li>
+                        </ul>
+                        <div class="stats-container">
+                            <div class="stat-item">
+                                <div class="stat-value">78%</div>
+                                <div class="stat-label">Increase in live music revenue (2021-2023)</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value">42%</div>
+                                <div class="stat-label">Of artists struggle with tour logistics</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value">3.2x</div>
+                                <div class="stat-label">Higher revenue for optimized tours</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <h3 class="slide-title">Technology & Innovation</h3>
+                    <div class="slide-content">
+                        <p>Our platform leverages cutting-edge technology:</p>
+                        <ul>
+                            <li>AI-powered venue matching and recommendations</li>
+                            <li>Real-time revenue tracking and analytics</li>
+                            <li>Automated negotiation tools</li>
+                            <li>Integrated payment processing</li>
+                        </ul>
+                        <div class="future-vision">
+                            <h4><i class="ri-cpu-line"></i> Future Technology Roadmap</h4>
+                            <ul>
+                                <li>Blockchain-based smart contracts for automated payments and royalty distribution</li>
+                                <li>Augmented reality tour planning and visualization</li>
+                                <li>Predictive analytics for optimal tour routing and scheduling</li>
+                                <li>Virtual venue experiences for remote tour planning</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <h3 class="slide-title">Growth Strategy</h3>
+                    <div class="slide-content">
+                        <p>Our roadmap for expansion includes:</p>
+                        <ul>
+                            <li>Geographic expansion to key music markets</li>
+                            <li>Feature development based on user feedback</li>
+                            <li>Strategic partnerships with venues and promoters</li>
+                            <li>Integration with existing industry tools</li>
+                        </ul>
+                        <div class="future-vision">
+                            <h4><i class="ri-global-line"></i> Market Penetration Strategy</h4>
+                            <ul>
+                                <li>Phase 1: Establish presence in major US markets (2024)</li>
+                                <li>Phase 2: Expand to European and Asian markets (2025)</li>
+                                <li>Phase 3: Global rollout with localized features (2026)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <h3 class="slide-title">Investment Opportunity</h3>
+                    <div class="slide-content">
+                        <p>We're seeking strategic investors to:</p>
+                        <ul>
+                            <li>Accelerate platform development</li>
+                            <li>Expand market reach</li>
+                            <li>Build strategic partnerships</li>
+                            <li>Scale operations</li>
+                        </ul>
+                        <div class="future-vision">
+                            <h4><i class="ri-line-chart-line"></i> Projected Returns</h4>
+                            <p>Our financial projections show:</p>
+                            <ul>
+                                <li>300% revenue growth in the first 24 months</li>
+                                <li>Break-even point within 18 months</li>
+                                <li>5x return on investment within 3 years</li>
+                            </ul>
+                        </div>
+                        <div class="highlight-box">
+                            <p>Join us in transforming the future of live music and creating unprecedented opportunities for artists worldwide.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-navigation">
+                <button class="nav-button" onclick="previousSlide()" id="prevButton">
+                    <i class="ri-arrow-left-line"></i> Previous
+                </button>
+                <button class="nav-button" onclick="nextSlide()" id="nextButton">
+                    Next <i class="ri-arrow-right-line"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function openPresentation() {
+            document.getElementById('presentationModal').style.display = 'block';
+            document.querySelector('.presentation-slides').style.display = 'block';
+            updateSlideNavigation();
+        }
+
+        function closePresentation() {
+            document.getElementById('presentationModal').style.display = 'none';
+            document.querySelector('.presentation-slides').style.display = 'none';
+            currentSlide = 0;
+            showSlide(currentSlide);
+        }
+
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[n].classList.add('active');
+            updateSlideNavigation();
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+                showSlide(currentSlide);
+            }
+        }
+
+        function previousSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        }
+
+        function updateSlideNavigation() {
+            const prevButton = document.getElementById('prevButton');
+            const nextButton = document.getElementById('nextButton');
+            
+            prevButton.disabled = currentSlide === 0;
+            nextButton.disabled = currentSlide === totalSlides - 1;
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('presentationModal');
+            if (event.target === modal) {
+                closePresentation();
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('presentationModal').style.display === 'block') {
+                if (event.key === 'ArrowRight') {
+                    nextSlide();
+                } else if (event.key === 'ArrowLeft') {
+                    previousSlide();
+                } else if (event.key === 'Escape') {
+                    closePresentation();
+                }
+            }
+        });
+    </script>
+</body>
+</html> 
